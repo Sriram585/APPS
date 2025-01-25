@@ -3,6 +3,7 @@ import Functions as f
 import time
 
 now=time.strftime("%b %d,%Y %H:%M:%S")
+print("Checking GIT")
 print(now)
 while True:
     user_action=input("Enter add,show,edit or exit....").strip()
