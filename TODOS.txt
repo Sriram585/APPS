@@ -1,0 +1,7 @@
+Intro to Python
+Intro to Java
+DSA in Python
+DSA in Java
+Learn HTML
+Learn CSS
+Learn Javascript
