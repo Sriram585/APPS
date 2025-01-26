@@ -1,7 +1,7 @@
 Intro to Python
 Intro to Java
 DSA in Python
-Dsa in Java
+Dsa in JAVA
 Learn CSS
 Learn HTML
 Learn CSS
