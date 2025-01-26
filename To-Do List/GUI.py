@@ -1,4 +1,4 @@
-import FreeSimpleGUI as sg
+import FreeSimpleGUI as fsg
 import Functions
 import time
 import os
@@ -7,19 +7,19 @@ if not os.path.exists("todos.txt"):
     with open("todos.txt", "w") as file:
         pass
 
-sg.theme("Black")
-clock = sg.Text(time.strftime("%b %d, %Y"), key="time")
-label = sg.Text("Type in your To-Do")
-input_box = sg.InputText(tooltip="Enter To-do", key="todo")
-list_box = sg.Listbox(values=Functions.get_todos(), size=(40, 10),
+fsg.theme("Black")
+clock = fsg.Text(time.strftime("%b %d, %Y"), key="time")
+label = fsg.Text("Type in your To-Do")
+input_box = fsg.InputText(tooltip="Enter To-do", key="todo")
+list_box = fsg.Listbox(values=Functions.get_todos(), size=(40, 10),
                       key="todos", enable_events=True)
 
-add_button = sg.Button("Add", size=(10, 1))
-edit_button = sg.Button("Edit", size=(10, 1))
-complete_button = sg.Button("Completed", size=(10, 1))
-exit_button = sg.Button("Exit", size=(10, 1))
+add_button = fsg.Button("Add", size=(10, 1))
+edit_button = fsg.Button("Edit", size=(10, 1))
+complete_button = fsg.Button("Completed", size=(10, 1))
+exit_button = fsg.Button("Exit", size=(10, 1))
 
-window = sg.Window("My To-Do APP",
+window = fsg.Window("My To-Do APP",
                    layout=[[clock], [label], [input_box, add_button],
                            [list_box, edit_button, complete_button],
                            [exit_button]],
@@ -27,9 +27,9 @@ window = sg.Window("My To-Do APP",
 
 try:
     while True:
-        event, values = window.read(timeout=100)
+        event, values = window.read()
         window["time"].update(time.strftime("%b %d, %Y"))
-        if event == sg.WINDOW_CLOSED or event == "Exit":
+        if event == fsg.WINDOW_CLOSED or event == "Exit":
             break
         if event == "Add":
             todos = Functions.get_todos()
@@ -47,7 +47,7 @@ try:
                 Functions.write_todos(todos)
                 window["todos"].update(values=todos)
             except IndexError:
-                sg.popup("Please select an item first")
+                fsg.popup("Please select an item first")
         elif event == "todos":
             window["todo"].update(value=values["todos"][0])
         elif event == "Completed":
@@ -60,7 +60,6 @@ try:
                 window["todos"].update(values=todos)
                 window["todo"].update(value="")
             except IndexError:
-                sg.popup("Please select an item first")
+                fsg.popup("Please select an item first")
 finally:
     window.close()
-print("Thank you for using our APP")
