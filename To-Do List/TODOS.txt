@@ -6,7 +6,3 @@ Learn CSS
 Learn HTML
 Learn CSS
 Learn Javascript
-Learn APP Development
-Not the last
-Random To-Do
-Last Todo
