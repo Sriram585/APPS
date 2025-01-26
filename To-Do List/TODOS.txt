@@ -1,8 +1,12 @@
 Intro to Python
 Intro to Java
 DSA in Python
-DSA in Java
+Dsa in Java
+Learn CSS
 Learn HTML
 Learn CSS
 Learn Javascript
 Learn APP Development
+Not the last
+Random To-Do
+Last Todo
