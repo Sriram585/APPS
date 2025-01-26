@@ -5,4 +5,4 @@ DSA in Java
 Learn HTML
 Learn CSS
 Learn Javascript
-Learn App Development
+Learn APP Development

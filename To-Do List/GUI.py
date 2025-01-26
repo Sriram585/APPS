@@ -22,10 +22,15 @@ while True:
             todos.append(new_todo)
             Functions.write_todos(todos)
         case "Edit":
-            todo_to_edit=values["todos"]
+            todo_to_edit=values["todos"][0]
+            print(type(todo_to_edit))
             new_todo=values["todo"]+"\n"
             todos=Functions.get_todos()
+            print(todos)
             index=todos.index(todo_to_edit)
+            todos[index]=new_todo
+            Functions.write_todos(todos)
+            window["todos"].update(values=todos)
         case fsg.WIN_CLOSED:
             break
 window.close()
